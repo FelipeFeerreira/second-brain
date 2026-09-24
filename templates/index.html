@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Segundo Cérebro</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">🧠 <span>Segundo Cérebro</span></div>
+
+    <div class="search-box">
+      <input id="search-input" type="text" placeholder="Buscar em tudo…" autocomplete="off">
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item active" data-view="notas">📝 Todas as notas</button>
+      <button class="nav-item" data-view="ideia">💡 Ideias</button>
+      <button class="nav-item" data-view="jogo">🎮 Jogos</button>
+      <button class="nav-item" data-view="livro">📚 Livros</button>
+      <button class="nav-item" data-view="grafo">🕸️ Grafo</button>
+    </nav>
+
+    <div class="new-buttons">
+      <button id="btn-new-nota" class="btn-new">+ Nota</button>
+      <button id="btn-new-jogo" class="btn-new">+ Jogo</button>
+      <button id="btn-new-livro" class="btn-new">+ Livro</button>
+    </div>
+
+    <div class="tags-section">
+      <div class="section-title">Tags</div>
+      <div id="tags-list" class="tags-list"></div>
+    </div>
+
+    <div id="stats" class="stats"></div>
+  </aside>
+
+  <!-- Lista (notas ou tabela) -->
+  <section class="list-pane" id="list-pane">
+    <div class="list-header">
+      <span id="list-title">Todas as notas</span>
+    </div>
+    <div id="list-body" class="list-body"></div>
+  </section>
+
+  <!-- Área principal: editor de nota OU grafo -->
+  <main class="main-pane" id="main-pane">
+    <div id="empty-state" class="empty-state">
+      <p>Selecione uma nota à esquerda, ou crie algo novo ✨</p>
+    </div>
+
+    <div id="editor" class="editor hidden">
+      <div class="editor-top">
+        <input id="editor-title" class="editor-title" placeholder="Título da nota">
+        <div class="editor-actions">
+          <button id="btn-save" class="btn-primary">Salvar</button>
+          <button id="btn-delete" class="btn-danger">Apagar</button>
+        </div>
+      </div>
+
+      <div id="fields-box" class="fields-box"></div>
+
+      <div class="tags-edit">
+        <label>Tags (separadas por vírgula)</label>
+        <input id="editor-tags" placeholder="ex: rpg, favoritos">
+      </div>
+
+      <div class="editor-tabs">
+        <button class="tab-btn active" data-tab="editar">Editar</button>
+        <button class="tab-btn" data-tab="ler">Ler</button>
+      </div>
+
+      <textarea id="editor-body" class="editor-body" placeholder="Escreva aqui em Markdown… use [[Nome da Nota]] para linkar outras notas."></textarea>
+      <div id="editor-preview" class="editor-preview hidden"></div>
+
+      <div class="backlinks-box">
+        <div class="section-title">🔗 Notas que linkam para esta</div>
+        <div id="backlinks-list" class="backlinks-list"></div>
+      </div>
+    </div>
+
+    <canvas id="graph-canvas" class="hidden"></canvas>
+  </main>
+
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
