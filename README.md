@@ -31,3 +31,9 @@ Open **http://127.0.0.1:5000**. An empty `vault/` is created locally. To use ano
 ## Scope and verification
 
 This is a personal, single-user local application. It has no multi-user authentication or hardened public hosting setup; keep the default loopback binding and use trusted local notes. File synchronization is external to the application and does not resolve concurrent edits automatically. See [verification notes](docs/PORTFOLIO_VALIDATION.md).
+
+---
+
+## License
+
+MIT - see [LICENSE](LICENSE). You may use, modify and redistribute this code with attribution.
