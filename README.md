@@ -4,6 +4,13 @@ A local-first knowledge manager that stores notes as **Markdown files with YAML 
 
 **Stack:** Python 3.10+ · Flask · PyYAML · Markdown · browser-based UI
 
+| | |
+|:--|:--|
+| **Live demo** | Local app — no hosted demo |
+| **Screenshots** | Pending — no screenshots yet |
+| **Stack** | Python · Flask · PyYAML · Markdown |
+| **License** | MIT — [LICENSE](LICENSE) |
+
 ## Features
 
 - Create and edit notes and ideas, with `[[wikilinks]]`, backlinks and tags.
@@ -33,6 +40,12 @@ Open **http://127.0.0.1:5000**. An empty `vault/` is created locally. To use ano
 This is a personal, single-user local application. It has no multi-user authentication or hardened public hosting setup; keep the default loopback binding and use trusted local notes. File synchronization is external to the application and does not resolve concurrent edits automatically. See [verification notes](docs/PORTFOLIO_VALIDATION.md).
 
 ---
+
+## What I would do next
+
+- Add tests for the Markdown/index layer and a sample vault that ships with the repo.
+- Add a one-command packaging path so Windows users do not need a venv.
+- Document a conflict strategy for folders synced by external tools.
 
 ## License
 
